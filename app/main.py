@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.api import auth, projects, tasks
+from app.api import auth, projects, tasks, admin
 
 from app.models.user import User
 from app.models.project import Project
@@ -15,6 +15,6 @@ def home():
 app.include_router(auth.router)
 app.include_router(projects.router)
 app.include_router(tasks.router)
-
+app.include_router(admin.router)
 
 
